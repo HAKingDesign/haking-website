@@ -3,9 +3,9 @@ import {
    DirectionalLightHelper,
  } from "three";
   function createLights(color) {
-   const light = new DirectionalLight(color, 4);
+   const light = new DirectionalLight(color, 1);
    const lightHelper = new DirectionalLightHelper(light, 0);
-   light.position.set(0, 0, 5);
+   light.position.set(0, 1, 1);
     light.tick = (delta) => {
    
    };
