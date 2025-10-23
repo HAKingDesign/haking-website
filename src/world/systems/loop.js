@@ -23,7 +23,7 @@ class Loop {
    this.terrain=terrain;
    this.initialColor=initialColor;
    this.hoverColor=hoverColor;
-   this.frame = 0
+   this.frame = 0;
  }
  
  start() {
