@@ -15,10 +15,11 @@ import {
   PlaneGeometry, 
   Vector3,
  WireframeGeometry,
+ EdgesGeometry,
  LineSegments,
  SphereGeometry,
  MeshStandardMaterial,
- MeshPhongMaterial,
+ LineBasicMaterial,
  DoubleSide,
  Mesh
 } from 'three';
@@ -42,7 +43,7 @@ const worldVar = {
   },
   camPosn:{
     x: 0, 
-    y: 25,
+    y: 35,
     z: 500
   },
   camFOV: 45,
@@ -153,9 +154,10 @@ class World {
      camera.lookAt(camTarget)
       container.append(renderer.domElement);
       // Light Instance, with optional light helper
-     const { light, lightHelper } = createLights('#d89ff0');
+     const { light, lightHelper,light2,lightHelper2 } = createLights('#d89ff0');
       // loop.updatables.push(light);
-      scene.add(light);
+      
+      scene.add(light, light2);
 
     
      const resizer = new Resizer(container, camera, renderer);
@@ -177,13 +179,18 @@ class World {
        emissive: '#d89ff0',
       flatShading: true,  
     });
-    const geometry = new SphereGeometry( 500, 32, 16 ); 
+    const geometry = new SphereGeometry( 400, 64, 32 ); 
     const sphere = new Mesh( geometry, material ); 
     sphere.position.z = -1000
     sphere.position.y = 100
     scene.add( sphere );
 
-   
+    // wireframe
+    var geo = new EdgesGeometry( sphere.geometry ); // or WireframeGeometry
+    var mat = new LineBasicMaterial( { color: 0xffffff } );
+    var wireframe = new LineSegments( geo, mat );
+    sphere.add( wireframe );
+      
     
 //  const wireframe = new WireframeGeometry( terrain.geometry );
 
@@ -202,7 +209,7 @@ class World {
 
 //  const geometry = new SphereGeometry(15, 32, 16)
 //  const sphere = new Mesh(geometry, material);
-  
+  console.log(terrain)
    loop = new Loop(
     camera, 
     scene, 
