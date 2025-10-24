@@ -31,7 +31,7 @@ export function createTerrain(props) {
  
  const plane = new Mesh(geometry, material);
 //  plane.position.set(0, 5, 0);
-//  plane.rotation.x -= Math.PI * 0.35;
+ plane.rotation.x -= Math.PI * 0.5;
 
  return randomizePlane(plane, props);
 }

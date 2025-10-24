@@ -13,9 +13,11 @@ import {
   Raycaster,
   BufferAttribute, 
   PlaneGeometry, 
+  Vector3,
  WireframeGeometry,
  LineSegments,
  SphereGeometry,
+ MeshStandardMaterial,
  MeshPhongMaterial,
  DoubleSide,
  Mesh
@@ -25,14 +27,29 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import * as dat from 'dat.gui'
 
-const gui = new dat.GUI()
+
 const worldVar = {
   plane: {
-    width: 500, 
+    width: 2500, 
     height: 1000,
-    widthSegments: 50,
+    widthSegments: 250,
     heightSegments: 100,
-  }
+  },
+  camTargetPosn:{
+    x: 0, 
+    y: 30,
+    z: -500
+  },
+  camPosn:{
+    x: 0, 
+    y: 25,
+    z: 500
+  },
+  camFOV: 45,
+  camAspectRatio: 1,
+  camNearClip: 0.1,
+  camFarClip: 2000,
+
 }
 
    const initialColor = {
@@ -61,15 +78,51 @@ function regenPlane(){
    })
 }
 
-gui.add(worldVar.plane, 'width', 50 , 1000)
-.onChange(regenPlane)
-gui.add(worldVar.plane, 'height', 50 , 1000)
-.onChange(regenPlane)
-gui.add(worldVar.plane, 'widthSegments', 25 , 100)
-.onChange(regenPlane)
-gui.add(worldVar.plane, 'heightSegments', 25 , 100)
-.onChange(regenPlane)
+function moveCamera(){
+  const {camPosn} = worldVar
+  const {camTargetPosn} = worldVar
+  const {camFOV} = worldVar
+  const {camAspectRatio} = worldVar
+  const {camNearClip} = worldVar
+  const {camFarClip} = worldVar
 
+  camera.position.set(camPosn.x, camPosn.y, camPosn.z)
+  camera.fov=camFOV
+  // camera.aspect=camAspectRatio
+  camera.near=camNearClip
+  camera.far=camFarClip
+  camTarget.x = camTargetPosn.x
+  camTarget.y = camTargetPosn.y
+  camTarget.z = camTargetPosn.z
+  camera.lookAt(camTarget)
+  camera.updateProjectionMatrix();
+}
+
+function createDatGui(){
+  const gui = new dat.GUI()
+  var planeFolder = gui.addFolder('plane');
+  planeFolder.add(worldVar.plane, 'width', 50 , 1000)
+  .onChange(regenPlane)
+  planeFolder.add(worldVar.plane, 'height', 50 , 1000)
+  .onChange(regenPlane)
+  planeFolder.add(worldVar.plane, 'widthSegments', 25 , 100)
+  .onChange(regenPlane)
+  planeFolder.add(worldVar.plane, 'heightSegments', 1000 , 5000)
+  .onChange(regenPlane)
+  var camFolder = gui.addFolder('camera')
+  var camPosnFolder = camFolder.addFolder('camera Position')
+  var camTargetFolder = camFolder.addFolder('camera Target')
+  camPosnFolder.add(worldVar.camPosn, 'x', -100, 100).onChange(moveCamera)
+  camPosnFolder.add(worldVar.camPosn, 'y', 0, 200).onChange(moveCamera)
+  camPosnFolder.add(worldVar.camPosn, 'z', -100, 1000).onChange(moveCamera)
+  camTargetFolder.add(worldVar.camTargetPosn, 'x', -100, 100).onChange(moveCamera)
+  camTargetFolder.add(worldVar.camTargetPosn, 'y', 0, 200).onChange(moveCamera)
+  camTargetFolder.add(worldVar.camTargetPosn, 'z', -100, 100).onChange(moveCamera)
+  camFolder.add(worldVar, 'camFOV', 0, 100).onChange(moveCamera)
+  // camFolder.add(worldVar, 'camAspectRatio', 0, 10).onChange(moveCamera)
+  camFolder.add(worldVar, 'camNearClip', 0, 10).onChange(moveCamera)
+  camFolder.add(worldVar, 'camFarClip', 1000, 5000).onChange(moveCamera)
+}
 // These variables are module-scoped: we cannot access them
 // from outside the module.
 let camera;
@@ -78,28 +131,33 @@ let scene;
 let loop;
 let terrain;
 let line;
+let camTarget;
 
 const mouse = {
   x: undefined, 
   y: undefined
 }
- 
+
 class World {
    constructor(container) {
+    createDatGui()
     let color = '0e00cf'
      // Instances of camera, scene, and renderer
     const raycaster = new Raycaster()
-     camera = createCamera();
+    const {camPosn, camTargetPosn} = worldVar
+     camera = createCamera(camPosn.x, camPosn.y, camPosn.z);
+     camTarget = new Vector3(camTargetPosn.x, camTargetPosn.y, camTargetPosn.z);
      scene = createScene("#0f0d0f");
      renderer = createRenderer();
       // Initialize Loop
-     
+     camera.lookAt(camTarget)
       container.append(renderer.domElement);
       // Light Instance, with optional light helper
-     const { light, lightHelper } = createLights(0xffffff);
+     const { light, lightHelper } = createLights('#d89ff0');
       // loop.updatables.push(light);
       scene.add(light);
- 
+
+    
      const resizer = new Resizer(container, camera, renderer);
       resizer.onResize = () => {
       this.render();
@@ -113,6 +171,18 @@ class World {
      initialColor: initialColor,
      wireframe: false
    });
+
+   const material = new MeshStandardMaterial({
+       color: 'purple',
+       emissive: '#d89ff0',
+      flatShading: true,  
+    });
+    const geometry = new SphereGeometry( 500, 32, 16 ); 
+    const sphere = new Mesh( geometry, material ); 
+    sphere.position.z = -1000
+    sphere.position.y = 100
+    scene.add( sphere );
+
    
     
 //  const wireframe = new WireframeGeometry( terrain.geometry );
