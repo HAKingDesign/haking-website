@@ -15,6 +15,7 @@ import {
   PlaneGeometry, 
   Vector3,
  WireframeGeometry,
+ MeshPhongMaterial,
  EdgesGeometry,
  LineSegments,
  SphereGeometry,
@@ -154,10 +155,10 @@ class World {
      camera.lookAt(camTarget)
       container.append(renderer.domElement);
       // Light Instance, with optional light helper
-     const { light, lightHelper,light2,lightHelper2 } = createLights('#d89ff0');
+     const { light, lightHelper,light2,lightHelper2, pointLight } = createLights('#d89ff0');
       // loop.updatables.push(light);
       
-      scene.add(light, light2);
+      scene.add(light2);
 
     
      const resizer = new Resizer(container, camera, renderer);
@@ -176,39 +177,45 @@ class World {
 
    const material = new MeshStandardMaterial({
        color: 'purple',
-       emissive: '#d89ff0',
+       emissive: '#b646e6',
       flatShading: true,  
+      polygonOffset: true,
+      polygonOffsetFactor: 1, // positive value pushes polygon further away
+      polygonOffsetUnits: 1
     });
-    const geometry = new SphereGeometry( 400, 64, 32 ); 
+    const geometry = new SphereGeometry( 150, 32, 16 ); 
     const sphere = new Mesh( geometry, material ); 
-    sphere.position.z = -1000
+    sphere.position.z = -550
     sphere.position.y = 100
+    // sphere.rotation.z = -Math.PI * 0.1
     scene.add( sphere );
 
     // wireframe
     var geo = new EdgesGeometry( sphere.geometry ); // or WireframeGeometry
-    var mat = new LineBasicMaterial( { color: 0xffffff } );
+    var mat = new LineBasicMaterial( { color: '#e1d2ff' } );
     var wireframe = new LineSegments( geo, mat );
     sphere.add( wireframe );
       
     
-//  const wireframe = new WireframeGeometry( terrain.geometry );
+//  
 
 //  const line = new LineSegments( wireframe );
 //   line.material.depthTest = true;
 //   line.material.opacity = 0.25;
 //   line.material.transparent = true;
     
-//  const material = new MeshPhongMaterial({
-//    color: 0x000000,
-//    side : DoubleSide,
-//    flatShading: true, 
-//   //  vertexColors: true, 
-//    shininess:60,
-//  });
+ const material2 = new MeshPhongMaterial({
+   color: '#015d92',
+  //  side : DoubleSide,
+  //  flatShading: true, 
+  
+   wireframe:true
+  //  vertexColors: true, 
+  //  shininess:60,
+ });
 
 //  const geometry = new SphereGeometry(15, 32, 16)
-//  const sphere = new Mesh(geometry, material);
+ terrain.add(new Mesh(terrain.geometry, material2));
   console.log(terrain)
    loop = new Loop(
     camera, 
@@ -218,13 +225,15 @@ class World {
     mouse,
     terrain, 
     initialColor,
-    hoverColor);
+    hoverColor,
+    sphere);
 
     loop.updatables.push(light);
     // loop.updatables.push(mouse);
     // loop.updatables.push(terrain);
     
-    scene.add(light, terrain, lightHelper);
+    // scene.add(light, lightHelper);
+    scene.add(terrain,pointLight);
  
     }
     render() {

@@ -13,7 +13,8 @@ class Loop {
     mouse,
     terrain, 
     initialColor,
-    hoverColor) {
+    hoverColor, 
+    sphere) {
    this.camera = camera;
    this.scene = scene;
    this.renderer = renderer;
@@ -23,6 +24,7 @@ class Loop {
    this.terrain=terrain;
    this.initialColor=initialColor;
    this.hoverColor=hoverColor;
+   this.sphere=sphere;
    this.frame = 0;
  }
  
@@ -39,6 +41,9 @@ class Loop {
         
       }
       this.terrain.geometry.attributes.position.needsUpdate = true
+      this.sphere.rotation.x = Math.PI * this.frame * 0.01
+      this.sphere.rotation.y = Math.PI * this.frame * 0.05
+      this.sphere.rotation.z = Math.PI * this.frame * 0.02
 
        this.renderer.render(this.scene, this.camera);
        this.raycaster.setFromCamera(this.mouse, this.camera)

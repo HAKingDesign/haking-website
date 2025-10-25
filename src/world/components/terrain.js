@@ -26,6 +26,9 @@ export function createTerrain(props) {
    flatShading: true, 
    vertexColors: true, 
    shininess:60,
+    polygonOffset: true,
+    polygonOffsetFactor: 1, // positive value pushes polygon further away
+    polygonOffsetUnits: 1
  });
  
  

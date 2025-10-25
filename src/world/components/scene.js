@@ -1,9 +1,9 @@
-import { Color, Scene } from 'three';
+import { Color, Scene, TextureLoader } from 'three';
  
 function createScene(color) {
  const scene = new Scene();
  
- scene.background = new Color(color);
+ scene.background = new TextureLoader().load('./src/assets/Space WIP_blend2_2 stars.png');
  
  return scene;
 }
