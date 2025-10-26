@@ -17,6 +17,8 @@
   margin-top: 2rem;
   display: flex;
   position: relative;
+  background-color: #ffffff2a;
+  /* padding: 0.4rem 0 1rem calc(var(--section-gap) / 2); */
 }
 
 .details {
@@ -49,7 +51,7 @@ h3 {
 
   i {
     top: calc(50% - 25px);
-    left: -26px;
+    left: 16px;
     position: absolute;
     border: 1px solid var(--color-border);
     background: var(--color-background);
