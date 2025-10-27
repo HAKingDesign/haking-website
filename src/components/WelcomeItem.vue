@@ -9,9 +9,9 @@ const slots = useSlots()
       <slot name="icon"></slot>
     </i>
     <div class="content">
-      <h2>
+      <h1>
         <slot name="heading"></slot>
-      </h2>
+      </h1>
       <slot></slot>
       <div v-if="slots.details">
         <details>
@@ -47,8 +47,8 @@ i {
   color: var(--color-text);
 }
 
-h2 {
-  font-size: 1.2rem;
+h1 {
+  font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
   color: var(--color-heading);

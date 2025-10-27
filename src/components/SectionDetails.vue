@@ -5,15 +5,15 @@ const slots = useSlots()
 
 <template>
     <div v-if="slots.heading">
-    <h3>
+    <h2  style="display: flex; justify-content: space-between;">
         <slot name="heading"></slot>
-    </h3>
+    </h2>
     <hr>
     </div>
-      <slot></slot>
-      <div v-if="slots.details">
+      <div style="font-size: 1.1rem;"><slot></slot></div>
+      <div v-if="slots.details" style="padding-top: 5px;">
         <details>
-          <summary><slot name="detailsLabel"></slot></summary>
+          <summary class="detailsLabel"><slot name="detailsLabel"></slot></summary>
         </details>
         <div class="detailsContent" style="padding-left: 1rem;">
         <slot name="details"></slot>
@@ -68,10 +68,12 @@ details[open] span::before {
   rotate: 90deg;
   transition: rotate 200ms ease-out;
 }
-
+.detailsLabel:hover {
+      cursor: pointer;
+    }
   div.detailsContent {
       box-sizing: border-box;
-      max-width: 500px;
+      max-width: inherit;
       max-height: 0;
       overflow: hidden;
       padding: 0 10px;
