@@ -8,7 +8,7 @@
   font-weight: normal;
   z-index: 1;
   
-  background-color: #10091388;
+  background-color: #100913c2;
   /* background-color: #ffffff88; */
   
   clip-path: polygon(
@@ -37,8 +37,10 @@ a,
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    padding-top: 25px;
+    /* display: flex;
+    place-items: center; */
+    padding-bottom: 25px;
   }
 
   #app {

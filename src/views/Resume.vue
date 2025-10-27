@@ -6,6 +6,7 @@ import EcosystemIcon from '../components/icons/IconEcosystem.vue'
 import CommunityIcon from '../components/icons/IconCommunity.vue'
 import SupportIcon from '../components/icons/IconSupport.vue'
 import SectionDetails from '@/components/SectionDetails.vue'
+import ItemDetails from '@/components/ItemDetails.vue'
 
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
@@ -17,7 +18,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     <li><a href="#section2">Skills</a></li>
     <li><a href="#section3">Education</a></li>
     <li><a href="#section4">Courses</a></li>
-    <li><a href="#section5">Involvement</a></li>
+    <!-- <li><a href="#section5">Involvement</a></li> -->
   </ul>
   <div class="content">
   <WelcomeItem id="section1">
@@ -27,12 +28,12 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     <template #heading>Job Experience</template>  
     <SectionDetails>
       <template #heading>
-        <div style="display: flex; justify-content: space-between; ">
           <div style="align-items: left;">Samsung Austin Semiconductor</div>
-          <div style="align-items: center;">Engineer 1</div>
-          <div style="align-items: right;">February 2023 - Current</div>
-        </div>
       </template>
+      <div style="display: flex; justify-content: space-between;">
+          <div style="align-items: center;">Engineer 1</div>
+          <div style="align-items: right;">Feb 2023 - Current</div>
+      </div>
       <template #detailsLabel>Details</template>
       <template #details>
         <ul>
@@ -48,12 +49,12 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     </SectionDetails>
     <SectionDetails>
       <template #heading>
-        <div style="display: flex; justify-content: space-between; ">
           <div style="align-items: left;">X-Fab Texas</div>
-          <div style="align-items: center;">Intern</div>
-          <div style="align-items: right;">May 2022 - November 2022</div>
-        </div>
       </template>
+      <div style="display: flex; justify-content: space-between;">
+          <div style="align-items: left;">Intern</div>
+          <div style="align-items: right;">May 2022 - Nov 2022</div>
+      </div>
       <template #detailsLabel>Details</template>
       <template #details>
         <ul>
@@ -71,71 +72,83 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
       <ToolingIcon />
     </template>
     <template #heading>Skills</template> 
-      <!-- <template #heading>
-        <div style="display: flex; justify-content: space-between; ">
-          <div style="align-items: left;">Samsung Austin Semiconductor</div>
-          <div style="align-items: right;">Engineer 1</div>
+        <h3><img class="skillLogo" src="@/assets/Fullstack.svg">Full-stack</h3>
+        <hr>
+        <div class="detailList">
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/Fullstack.svg">Full-stack</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/logo.svg">VueJS</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/HTML5_Badge.svg"><img class="skillLogo" src="@/assets/Official_CSS_Logo.svg">HTML/CSS</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/JavaScript_logo.svg">JavaScript</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/Postgresql_elephant.svg">Postgres</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/FastAPI.svg">FastAPI</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/Postgresql_elephant.svg">Postgres</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/Server.svg">Server</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/TuxFlat.svg">Linux</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/truenas-scale.svg">TrueNAS Scale</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/proxmox-logo-inverted-notext.svg">Proxmox</template>
+          </ItemDetails>
         </div>
-      </template> -->
-        <div style="display: grid;  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  column-gap: 10px;
-  row-gap: 15px;">
-          <div>
-          <details >
-            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
-          </details>
-          <div class="detailsContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          </div>
-          <div>
-          <details >
-            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/python-logo-notext.svg">Python</span></summary>
-          </details>
-          <div class="detailsContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          </div>
-          <div>
-          <details >
-            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
-          </details>
-          <div class="detailsContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          </div>
-          <div>
-          <details >
-            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
-          </details>
-          <div class="detailsContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          </div>
-          <div>
-          <details >
-            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
-          </details>
-          <div class="detailsContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          </div>
-          <div>
-          <details >
-            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
-          </details>
-          <div class="detailsContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          </div>
-          <div>
-          <details >
-            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
-          </details>
-          <div class="detailsContent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          </div>
+        
+        <h3><img class="skillLogo" src="@/assets/languageIcon.svg">Languages</h3>
+        <hr>
+        <div class="detailList">
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/python-logo-notext.svg">Python</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/Logo_C_sharp.svg">C#</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/The_C_Programming_Language_logo.svg">C</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/java-logo.svg">Java</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/full_colored_light.svg">Bashscript</template>
+          </ItemDetails>
+        </div>
+
+        <h3><img class="skillLogo" src="@/assets/Toolbox.svg">Tools</h3>
+        <hr>
+        <div class="detailList">
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/git_logo_color.svg">Git</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/blender_logo_noname.svg">Blender</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/godot_color.svg">Godot</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/unity-original-logo.svg">Unity software</template>
+          </ItemDetails>
+          <ItemDetails>
+            <template #label><img class="skillLogo" src="@/assets/Opengl-logo.svg" style="width: 50px;">OpenGL</template>
+          </ItemDetails>
+          
         </div>
 
   </WelcomeItem>
@@ -145,6 +158,16 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
       <EcosystemIcon />
     </template>
     <template #heading>Education</template>
+    
+    <SectionDetails>
+      <template #heading>
+        <div>Texas Tech University</div>
+        <div>Bachelor of Science in Computer Science <br>Minor in Mathematics </div>
+      </template>
+      <p>Graduated December 2022 with a GPA of 3.38 </p>
+      
+    </SectionDetails>
+    
   </WelcomeItem>
 
   <WelcomeItem id="section4">
@@ -152,14 +175,65 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
       <CommunityIcon />
     </template>
     <template #heading>Courses</template>
+
+    <div class="detailList">
+      <ItemDetails>
+        <template #label>Data structures</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Data structures</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Software Engineering</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Computer Architecture</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Operating Systems</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Embedded Systems</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Concepts of Programming Languages</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Discrete Computational Structures</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Comp Org/ Assembly Language</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Cyber Physical Systems</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Human Computer Interaction</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Object Orientated Programming</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Design/Analysis of Algorithms</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Modern Digital System Design</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Concepts of Database Systems</template>
+      </ItemDetails>
+      <ItemDetails>
+        <template #label>Intro. to Artificial Intelligence</template>
+      </ItemDetails>
+    </div>
   </WelcomeItem>
 
-  <WelcomeItem id="section5">
+  <!-- <WelcomeItem id="section5">
     <template #icon>
       <SupportIcon />
     </template>
     <template #heading>Involvement</template>
-  </WelcomeItem>
+  </WelcomeItem> -->
   </div>
   </div>
 </template>
@@ -188,14 +262,17 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     padding-bottom: 1rem;
     scroll-padding: 100px;
   }
-  span.detailButton {
+  span.detailButton, span.NoDetail {
       position: relative;
       display: flex;
       align-items: center;
-      padding-left: 1rem;
       background: rgba(0, 0, 0, 0.39);
       color: #ffffffb0;
       height: 4rem;
+      padding-left: 1rem;
+    }
+    span.NoDetail{
+      margin-right: 0.1rem;
     }
     span.detailButton::before {
       content: ">";
@@ -240,5 +317,19 @@ details[open] span.detailButton::before {
       border: 2px solid transparent;
       transition: max-height 400ms ease-out, border 0ms 400ms linear;
     }
+.detailList{
+    display: grid;  
+    grid-template-columns: 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
+
+}
+
+  
+@media (min-width: 1024px) {
+  .detailList{
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+  }
+}
 
 </style>
