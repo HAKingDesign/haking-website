@@ -4,23 +4,26 @@ const slots = useSlots()
 </script>
 
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="content">
-      <h2>
+    <div v-if="slots.heading">
+    <h3>
         <slot name="heading"></slot>
-      </h2>
+    </h3>
+    <hr>
+    </div>
       <slot></slot>
       <div v-if="slots.details">
         <details>
-          <summary>Details</summary>
-          <slot name="details"></slot>
+          <summary><slot name="detailsLabel"></slot></summary>
         </details>
+        <div class="detailsContent" style="padding-left: 1rem;">
+        <slot name="details"></slot>
+        </div>
       </div>
+  <!-- <div class="item">
+    <div class="content">
+      
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style scoped>
@@ -53,6 +56,28 @@ h2 {
   margin-bottom: 0.4rem;
   color: var(--color-heading);
 }
+
+
+details[open] + div.detailsContent {
+  max-height: 800px; /* Set a max-height value enough to show all the content */
+  border-color: #888;
+  transition: max-height 400ms ease-out, border 0ms linear;
+}
+
+details[open] span::before {
+  rotate: 90deg;
+  transition: rotate 200ms ease-out;
+}
+
+  div.detailsContent {
+      box-sizing: border-box;
+      max-width: 500px;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 10px;
+      border: 2px solid transparent;
+      transition: max-height 400ms ease-out, border 0ms 400ms linear;
+    }
 
 @media (min-width: 1024px) {
   .item {
@@ -96,5 +121,6 @@ h2 {
   /* .item:last-of-type:after {
     display: none;
   } */
-}
+   
+} 
 </style>
