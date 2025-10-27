@@ -16,7 +16,7 @@ function main() {
  world.start();
 }
 
-main();
+// main();
 
 const app = createApp(App)
 

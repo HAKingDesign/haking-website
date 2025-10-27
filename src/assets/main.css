@@ -2,10 +2,23 @@
 
 #app {
   max-width: 1280px;
+  /* max-height: 95vh; */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   font-weight: normal;
   z-index: 1;
+  
+  background-color: #10091388;
+  /* background-color: #ffffff88; */
+  
+  clip-path: polygon(
+    0 0,
+    85% 0,
+    100% 15%,
+    100% 100%,
+    15% 100%,
+    0% 85%
+  ) 
 }
 
 a,
@@ -29,8 +42,7 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
+    /* background-color: #10091388; */
   }
 }
