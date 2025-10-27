@@ -5,7 +5,8 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" />
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" /> -->
+    <div class="logo"></div>
 
     <div class="wrapper">
       <HelloWorld msg="Hunter Austin King" />

@@ -46,6 +46,22 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
         </ul>
       </template>
     </SectionDetails>
+    <SectionDetails>
+      <template #heading>
+        <div style="display: flex; justify-content: space-between; ">
+          <div style="align-items: left;">X-Fab Texas</div>
+          <div style="align-items: center;">Intern</div>
+          <div style="align-items: right;">May 2022 - November 2022</div>
+        </div>
+      </template>
+      <template #detailsLabel>Details</template>
+      <template #details>
+        <ul>
+          <li>Developed file converter for converting CSV files to binary binary format compatible with internal company software </li>
+          <li>Refactor existing code base, to account for OS transition. </li>
+        </ul>
+      </template>
+    </SectionDetails>
     
 
   </WelcomeItem>
@@ -61,25 +77,66 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
           <div style="align-items: right;">Engineer 1</div>
         </div>
       </template> -->
-        <div style="display: grid;  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;">
+        <div style="display: grid;  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 15px;">
           <div>
-          <details>
-            <summary><img class="skillLogo" src="@/assets/logo.svg">VueJS</summary>
+          <details >
+            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
           </details>
           <div class="detailsContent">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           </div>
-          
           <div>
-          <details>
-            <summary><img class="skillLogo" src="@/assets/logo.svg">VueJS</summary>
+          <details >
+            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/python-logo-notext.svg">Python</span></summary>
           </details>
           <div class="detailsContent">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           </div>
-        </div> 
+          <div>
+          <details >
+            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
+          </details>
+          <div class="detailsContent">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          </div>
+          <div>
+          <details >
+            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
+          </details>
+          <div class="detailsContent">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          </div>
+          <div>
+          <details >
+            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
+          </details>
+          <div class="detailsContent">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          </div>
+          <div>
+          <details >
+            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
+          </details>
+          <div class="detailsContent">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          </div>
+          <div>
+          <details >
+            <summary><span class="detailButton"><img class="skillLogo" src="@/assets/logo.svg">VueJS</span></summary>
+          </details>
+          <div class="detailsContent">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          </div>
+        </div>
 
   </WelcomeItem>
 
@@ -110,6 +167,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
   .skillLogo{
     height: 25px;
     width: 25px;
+    margin-right: 5px;
   }
   
   .tableOfContent {
@@ -130,19 +188,45 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     padding-bottom: 1rem;
     scroll-padding: 100px;
   }
+  span.detailButton {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+      background: rgba(0, 0, 0, 0.39);
+      color: #ffffffb0;
+      height: 4rem;
+    }
+    span.detailButton::before {
+      content: ">";
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      margin-right: 0.1rem;
+      transition: rotate 200ms 400ms ease-out;
+    }
+
+    span.detailButton:hover {
+      cursor: pointer;
+    }
  details > summary {
   list-style: none;
+  border: 2px solid transparent;
+  border-radius: 1px;
 }
-details > summary::-webkit-details-marker {
+summary {
+      display: block;
+    }
+summary::-webkit-details-marker {
   display: none;
 }
 details[open] + div.detailsContent {
   max-height: 800px; /* Set a max-height value enough to show all the content */
-  border-color: #888;
+  border-color: rgba(255, 255, 255, 0.39);
   transition: max-height 400ms ease-out, border 0ms linear;
 }
 
-details[open] span::before {
+details[open] span.detailButton::before {
   rotate: 90deg;
   transition: rotate 200ms ease-out;
 }
