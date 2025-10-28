@@ -5,8 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" /> -->
-    <div class="logo"></div>
+    <img alt="Vue logo" class="logo" src="@/assets/HAKing_logo.svg" />
 
     <div class="wrapper">
       <HelloWorld msg="Hunter Austin King" />
@@ -72,8 +71,8 @@ nav a:first-of-type {
   }
 
   .logo {
-    width:125px; 
-    height:125px;
+    width:150px; 
+    height:150px;
     margin: 0 2rem 0 0;
   }
 
