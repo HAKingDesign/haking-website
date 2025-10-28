@@ -39,8 +39,8 @@ const worldVar = {
   },
   camTargetPosn:{
     x: 0, 
-    y: 30,
-    z: -500
+    y: -10,
+    z: 100
   },
   camPosn:{
     x: 0, 
@@ -146,13 +146,13 @@ class World {
     let color = '0e00cf'
      // Instances of camera, scene, and renderer
     const raycaster = new Raycaster()
-    const {camPosn, camTargetPosn} = worldVar
-     camera = createCamera(camPosn.x, camPosn.y, camPosn.z);
+    const {camPosn, camTargetPosn, camFOV, camAspectRatio, camNearClip ,camFarClip} = worldVar
+     camera = createCamera(camPosn.x, camPosn.y, camPosn.z, camFOV, camAspectRatio, camNearClip ,camFarClip);
      camTarget = new Vector3(camTargetPosn.x, camTargetPosn.y, camTargetPosn.z);
      scene = createScene("#0f0d0f");
      renderer = createRenderer();
       // Initialize Loop
-     camera.lookAt(camTarget)
+      camera.updateProjectionMatrix();
       container.append(renderer.domElement);
       // Light Instance, with optional light helper
      const { light, lightHelper,light2,lightHelper2, pointLight } = createLights('#d89ff0');
@@ -234,6 +234,7 @@ class World {
     
     // scene.add(light, lightHelper);
     scene.add(terrain,pointLight);
+     camera.lookAt(camTarget)
  
     }
     render() {

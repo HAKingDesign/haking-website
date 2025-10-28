@@ -23,7 +23,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
   <div class="content">
   <WelcomeItem id="section1">
     <template #icon>
-      <DocumentationIcon />
+      <img class="sectionLogo" src="@/assets/WorkExperince.svg">
     </template>
     <template #heading>Job Experience</template>  
     <SectionDetails>
@@ -69,84 +69,84 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 
   <WelcomeItem id="section2">
     <template #icon>
-      <ToolingIcon />
+      <img class="sectionLogo" src="@/assets/tool_icons/Toolbox.svg">
     </template>
     <template #heading>Skills</template> 
-        <h3><img class="skillLogo" src="@/assets/Fullstack.svg">Full-stack</h3>
+        <h3><img class="skillLogo" src="@/assets/frontend_icons/Fullstack.svg">Full-stack</h3>
         <hr>
         <div class="detailList">
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/Fullstack.svg">Full-stack</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/Fullstack.svg">Full-stack</template>
           </ItemDetails>
           <ItemDetails>
             <template #label><img class="skillLogo" src="@/assets/logo.svg">VueJS</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/HTML5_Badge.svg"><img class="skillLogo" src="@/assets/Official_CSS_Logo.svg">HTML/CSS</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/HTML5_Badge.svg"><img class="skillLogo" src="@/assets/frontend_icons/Official_CSS_Logo.svg">HTML/CSS</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/JavaScript_logo.svg">JavaScript</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/JavaScript_logo.svg">JavaScript</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/Postgresql_elephant.svg">Postgres</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/Postgresql_elephant.svg">Postgres</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/FastAPI.svg">FastAPI</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/FastAPI.svg">FastAPI</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/Postgresql_elephant.svg">Postgres</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/Postgresql_elephant.svg">Postgres</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/Server.svg">Server</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/Server.svg">Server</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/TuxFlat.svg">Linux</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/TuxFlat.svg">Linux</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/truenas-scale.svg">TrueNAS Scale</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/truenas-scale.svg">TrueNAS Scale</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/proxmox-logo-inverted-notext.svg">Proxmox</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/proxmox-logo-inverted-notext.svg">Proxmox</template>
           </ItemDetails>
         </div>
         
-        <h3><img class="skillLogo" src="@/assets/languageIcon.svg">Languages</h3>
+        <h3><img class="skillLogo" src="@/assets/languages_icons/languageIcon.svg">Languages</h3>
         <hr>
         <div class="detailList">
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/python-logo-notext.svg">Python</template>
+            <template #label><img class="skillLogo" src="@/assets/languages_icons/python-logo-notext.svg">Python</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/Logo_C_sharp.svg">C#</template>
+            <template #label><img class="skillLogo" src="@/assets/languages_icons/Logo_C_sharp.svg">C#</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/The_C_Programming_Language_logo.svg">C</template>
+            <template #label><img class="skillLogo" src="@/assets/languages_icons/The_C_Programming_Language_logo.svg">C</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/java-logo.svg">Java</template>
+            <template #label><img class="skillLogo" src="@/assets/languages_icons/java-logo.svg">Java</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/full_colored_light.svg">Bashscript</template>
+            <template #label><img class="skillLogo" src="@/assets/languages_icons/bash_light.svg">Bashscript</template>
           </ItemDetails>
         </div>
 
-        <h3><img class="skillLogo" src="@/assets/Toolbox.svg">Tools</h3>
+        <h3><img class="skillLogo" src="@/assets/tool_icons/Toolbox.svg">Tools</h3>
         <hr>
         <div class="detailList">
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/git_logo_color.svg">Git</template>
+            <template #label><img class="skillLogo" src="@/assets/tool_icons/git_logo_color.svg">Git</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/blender_logo_noname.svg">Blender</template>
+            <template #label><img class="skillLogo" src="@/assets/tool_icons/blender_logo_noname.svg">Blender</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/godot_color.svg">Godot</template>
+            <template #label><img class="skillLogo" src="@/assets/tool_icons/godot_color.svg">Godot</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/unity-original-logo.svg">Unity software</template>
+            <template #label><img class="skillLogo" src="@/assets/tool_icons/unity-original-logo.svg">Unity software</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/Opengl-logo.svg" style="width: 50px;">OpenGL</template>
+            <template #label><img class="skillLogo" src="@/assets/tool_icons/Opengl-logo.svg" style="width: 50px;">OpenGL</template>
           </ItemDetails>
           
         </div>
@@ -155,7 +155,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 
   <WelcomeItem id="section3">
     <template #icon>
-      <EcosystemIcon />
+      <img class="sectionLogo" src="@/assets/education.svg">
     </template>
     <template #heading>Education</template>
     
@@ -172,7 +172,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 
   <WelcomeItem id="section4">
     <template #icon>
-      <CommunityIcon />
+      <img class="sectionLogo" src="@/assets/Course.svg">
     </template>
     <template #heading>Courses</template>
 
@@ -238,6 +238,11 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
   </div>
 </template>
 <style scoped>
+  .sectionLogo{
+    height: 20px;
+    width: 20px;
+    filter: invert(20%) contrast(100%)
+  }
   .skillLogo{
     height: 25px;
     width: 25px;
