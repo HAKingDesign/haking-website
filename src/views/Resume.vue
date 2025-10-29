@@ -91,10 +91,10 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
             <template #label><img class="skillLogo" src="@/assets/frontend_icons/Postgresql_elephant.svg">Postgres</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/frontend_icons/FastAPI.svg">FastAPI</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/sqlite-original-logo.svg">SQLite</template>
           </ItemDetails>
           <ItemDetails>
-            <template #label><img class="skillLogo" src="@/assets/frontend_icons/Postgresql_elephant.svg">Postgres</template>
+            <template #label><img class="skillLogo" src="@/assets/frontend_icons/FastAPI.svg">FastAPI</template>
           </ItemDetails>
           <ItemDetails>
             <template #label><img class="skillLogo" src="@/assets/frontend_icons/Server.svg">Server</template>
