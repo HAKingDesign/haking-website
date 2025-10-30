@@ -27,7 +27,7 @@ div .content{
         display: flex;
         place-items: center;
         justify-content:flex-start;
-        margin-left: calc(125px + 2rem);
+        margin-left: 182px;
     }
 }
 </style>

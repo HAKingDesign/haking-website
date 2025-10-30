@@ -8,7 +8,7 @@ defineProps<{
   <div class="greetings">
     <h1 class="blue">{{ msg }}</h1>
     <h3>
-      Full-stack, Game Dev, 3D Graphics, Shaders
+      Full-stack, Game Development, Computer Graphics
     </h3>
   </div>
 </template>

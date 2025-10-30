@@ -13,6 +13,8 @@ function main() {
  const world = new World(container);
  
  // Start the loop (produce a stream of frames)
+//  world.createDatGui()
+//  world.createOrbitControls()
  world.start();
 }
 

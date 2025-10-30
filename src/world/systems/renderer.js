@@ -1,7 +1,10 @@
 import { WebGLRenderer } from "three";
  
-function createRenderer() {
- const renderer = new WebGLRenderer({ antialias: true });
+function createRenderer(container) {
+ const renderer = new WebGLRenderer({ 
+    antialias: true,
+    canvas: container
+  });
  
  // Turn on the physically correct lighting model.
  renderer.physicallyCorrectLights = true;

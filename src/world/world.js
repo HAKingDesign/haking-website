@@ -100,31 +100,7 @@ function moveCamera(){
   camera.updateProjectionMatrix();
 }
 
-function createDatGui(){
-  const gui = new dat.GUI()
-  var planeFolder = gui.addFolder('plane');
-  planeFolder.add(worldVar.plane, 'width', 50 , 1000)
-  .onChange(regenPlane)
-  planeFolder.add(worldVar.plane, 'height', 50 , 1000)
-  .onChange(regenPlane)
-  planeFolder.add(worldVar.plane, 'widthSegments', 25 , 1000)
-  .onChange(regenPlane)
-  planeFolder.add(worldVar.plane, 'heightSegments', 25 , 1000)
-  .onChange(regenPlane)
-  var camFolder = gui.addFolder('camera')
-  var camPosnFolder = camFolder.addFolder('camera Position')
-  var camTargetFolder = camFolder.addFolder('camera Target')
-  camPosnFolder.add(worldVar.camPosn, 'x', -100, 100).onChange(moveCamera)
-  camPosnFolder.add(worldVar.camPosn, 'y', 0, 200).onChange(moveCamera)
-  camPosnFolder.add(worldVar.camPosn, 'z', -100, 1000).onChange(moveCamera)
-  camTargetFolder.add(worldVar.camTargetPosn, 'x', -750, 750).onChange(moveCamera)
-  camTargetFolder.add(worldVar.camTargetPosn, 'y', -100, 200).onChange(moveCamera)
-  camTargetFolder.add(worldVar.camTargetPosn, 'z', -1000, 100).onChange(moveCamera)
-  camFolder.add(worldVar, 'camFOV', 0, 100).onChange(moveCamera)
-  // camFolder.add(worldVar, 'camAspectRatio', 0, 10).onChange(moveCamera)
-  camFolder.add(worldVar, 'camNearClip', 0, 10).onChange(moveCamera)
-  camFolder.add(worldVar, 'camFarClip', 1000, 5000).onChange(moveCamera)
-}
+
 // These variables are module-scoped: we cannot access them
 // from outside the module.
 let camera;
@@ -141,8 +117,35 @@ const mouse = {
 }
 
 class World {
+  createDatGui(){
+    const gui = new dat.GUI()
+    var planeFolder = gui.addFolder('plane');
+    planeFolder.add(worldVar.plane, 'width', 50 , 1000)
+    .onChange(regenPlane)
+    planeFolder.add(worldVar.plane, 'height', 50 , 1000)
+    .onChange(regenPlane)
+    planeFolder.add(worldVar.plane, 'widthSegments', 25 , 1000)
+    .onChange(regenPlane)
+    planeFolder.add(worldVar.plane, 'heightSegments', 25 , 1000)
+    .onChange(regenPlane)
+    var camFolder = gui.addFolder('camera')
+    var camPosnFolder = camFolder.addFolder('camera Position')
+    var camTargetFolder = camFolder.addFolder('camera Target')
+    camPosnFolder.add(worldVar.camPosn, 'x', -100, 100).onChange(moveCamera)
+    camPosnFolder.add(worldVar.camPosn, 'y', 0, 200).onChange(moveCamera)
+    camPosnFolder.add(worldVar.camPosn, 'z', -100, 1000).onChange(moveCamera)
+    camTargetFolder.add(worldVar.camTargetPosn, 'x', -750, 750).onChange(moveCamera)
+    camTargetFolder.add(worldVar.camTargetPosn, 'y', -100, 200).onChange(moveCamera)
+    camTargetFolder.add(worldVar.camTargetPosn, 'z', -1000, 100).onChange(moveCamera)
+    camFolder.add(worldVar, 'camFOV', 0, 100).onChange(moveCamera)
+    // camFolder.add(worldVar, 'camAspectRatio', 0, 10).onChange(moveCamera)
+    camFolder.add(worldVar, 'camNearClip', 0, 10).onChange(moveCamera)
+    camFolder.add(worldVar, 'camFarClip', 1000, 5000).onChange(moveCamera)
+  }
+
    constructor(container) {
-    createDatGui()
+
+    
     let color = '0e00cf'
      // Instances of camera, scene, and renderer
     const raycaster = new Raycaster()
@@ -150,10 +153,10 @@ class World {
      camera = createCamera(camPosn.x, camPosn.y, camPosn.z, camFOV, camAspectRatio, camNearClip ,camFarClip);
      camTarget = new Vector3(camTargetPosn.x, camTargetPosn.y, camTargetPosn.z);
      scene = createScene("#0f0d0f");
-     renderer = createRenderer();
+     renderer = createRenderer(container);
       // Initialize Loop
       camera.updateProjectionMatrix();
-      container.append(renderer.domElement);
+      // container.append(renderer.domElement);
       // Light Instance, with optional light helper
      const { light, lightHelper,light2,lightHelper2, pointLight } = createLights('#d89ff0');
       // loop.updatables.push(light);
@@ -166,7 +169,7 @@ class World {
       this.render();
      };
      
-     new OrbitControls(camera, renderer.domElement)
+     
  
    // Terrain Instance
    terrain = createTerrain({
@@ -241,6 +244,9 @@ class World {
      // Draw a single frame
      renderer.render(scene, camera);
    }
+   
+  createOrbitControls(){new OrbitControls(camera, renderer.domElement)}
+  
     // Animation handlers
    start() {
      loop.start();
