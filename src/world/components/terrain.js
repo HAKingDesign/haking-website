@@ -59,14 +59,16 @@ export function randomizePlane(plane, props) {
  plane.geometry.attributes.position.randomVals = randomVals
 
  const colors = []
-   for (let i = 0; i < plane.geometry.attributes.position.count; i++) {
-    colors.push(props.initialColor.r, props.initialColor.g, props.initialColor.b)
-   }
+  if (props){
+    for (let i = 0; i < plane.geometry.attributes.position.count; i++) {
+      colors.push(props.initialColor.r, props.initialColor.g, props.initialColor.b)
+    }
 
-   plane.geometry.setAttribute(
-    'color', 
-    new BufferAttribute(new Float32Array(colors), 3)
-  )
+    plane.geometry.setAttribute(
+      'color', 
+      new BufferAttribute(new Float32Array(colors), 3)
+    )
+  }
  
  return plane;
 }

@@ -18,6 +18,7 @@ import {
  MeshPhongMaterial,
  EdgesGeometry,
  LineSegments,
+ IcosahedronGeometry,
  SphereGeometry,
  MeshStandardMaterial,
  LineBasicMaterial,
@@ -186,10 +187,11 @@ class World {
       polygonOffsetFactor: 1, // positive value pushes polygon further away
       polygonOffsetUnits: 1
     });
-    const geometry = new SphereGeometry( 150, 32, 16 ); 
+    const geometry = new IcosahedronGeometry( 150, 1 ); 
     const sphere = new Mesh( geometry, material ); 
     sphere.position.z = -550
     sphere.position.y = 100
+
     // sphere.rotation.z = -Math.PI * 0.1
     scene.add( sphere );
 
