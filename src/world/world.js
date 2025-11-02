@@ -11,18 +11,18 @@ import { Resizer } from "./systems/resizer.js";
 
 import {
   Raycaster,
-  BufferAttribute, 
+  // BufferAttribute, 
   PlaneGeometry, 
   Vector3,
- WireframeGeometry,
+//  WireframeGeometry,
  MeshPhongMaterial,
  EdgesGeometry,
  LineSegments,
  IcosahedronGeometry,
- SphereGeometry,
+//  SphereGeometry,
  MeshStandardMaterial,
  LineBasicMaterial,
- DoubleSide,
+//  DoubleSide,
  Mesh
 } from 'three';
 
