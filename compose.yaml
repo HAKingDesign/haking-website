@@ -1,5 +1,11 @@
 services:
-
+  haking-website-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: haking-site
+    ports:
+      - "8080:8080"
   haking-website-dev:
     build:
       context: .
