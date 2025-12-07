@@ -6,6 +6,8 @@ services:
     image: haking-site
     env_file:
       - .env
+    environment:
+      - PORT=${PORT}
     ports:
       - ${PORT}:${PORT}
   haking-website-dev:
