@@ -11,16 +11,28 @@ FROM node:${NODE_VERSION} AS builder
 WORKDIR /app
 
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
+COPY package.json ./
 
-# Install project dependencies using npm ci (ensures a clean, reproducible install)
-RUN --mount=type=cache,target=/root/.npm npm ci
+COPY yarn.lock ./
 
-# Copy the rest of the application source code into the container
 COPY . .
 
-# Build the Vue.js application
-RUN npm run build
+# RUN npm install yarn    
+RUN yarn install 
+
+RUN yarn run build
+
+# # Copy package-related files first to leverage Docker's caching mechanism
+# COPY package.json package-lock.json ./
+
+# # Install project dependencies using npm ci (ensures a clean, reproducible install)
+# RUN --mount=type=cache,target=/root/.npm npm ci
+
+# # Copy the rest of the application source code into the container
+# COPY . .
+
+# # Build the Vue.js application
+# RUN npm run build
 
 # =========================================
 # Stage 2: Prepare Nginx to Serve Static Files
@@ -40,7 +52,7 @@ COPY --chown=nginx:nginx --from=builder /app/dist /usr/share/nginx/html
 
 # Expose port 8080 to allow HTTP traffic
 # Note: The default NGINX container now listens on port 8080 instead of 80 
-EXPOSE 8081
+EXPOSE $PORT
 
 # Start Nginx directly with custom config
 ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]

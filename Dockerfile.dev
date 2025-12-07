@@ -28,7 +28,7 @@ RUN chown -R node:node /app
 USER node
 
 # Expose the port used by the Vite development server
-EXPOSE 5173
+EXPOSE $DEV_PORT
 
 # Use a default command, can be overridden in Docker compose.yml file
 CMD [ "yarn", "dev", "--", "--host" ]
