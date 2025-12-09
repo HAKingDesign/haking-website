@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: haking-website-prod
     image: haking-site
     env_file:
       - .env
