@@ -10,24 +10,25 @@ services:
     environment:
       - PORT=${PORT}
     ports:
-      - ${PORT}:${PORT}
-#     labels:
-#       - "traefik.enable=true"
-#       - "traefik.http.routers.haking-website-prod.entrypoints=http"
-#       - "traefik.http.routers.haking-website-prod.rule=Host(`www.hakingstudio.com`)"
-#       - "traefik.http.middlewares.haking-website-prod-https-redirect.redirectscheme.scheme=https"
-#       - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
-#       - "traefik.http.routers.haking-website-prod.middlewares=haking-website-prod-https-redirect"
-#       - "traefik.http.routers.haking-website-prod-secure.entrypoints=https"
-#       - "traefik.http.routers.haking-website-prod-secure.rule=Host(`www.hakingstudio.com`)"
-#       - "traefik.http.routers.haking-website-prod-secure.tls=true"
-#       - "traefik.http.routers.haking-website-prod-secure.service=haking-website-prod"
-#       - "traefik.http.routers.haking-website-prod-secure.tls.domains[0].main=hakingstudio.com"
-#       - "traefik.http.routers.haking-website-prod-secure.tls.domains[0].sans=*.hakingstudio.com"
-#       - "traefik.http.services.haking-website-prod.loadbalance.server.port=8081"
-#       - "traefik.docker.network=proxy"
-#     networks:
-#       proxy:
-# networks:
-#   proxy:
-#     external: true
+      - 8080:8080
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.haking-website-prod.entrypoints=http"
+      - "traefik.http.routers.haking-website-prod.rule=Host(`www.hakingstudio.com`)"
+      - "traefik.http.middlewares.haking-website-prod-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.haking-website-prod.middlewares=haking-website-prod-https-redirect"
+      - "traefik.http.routers.haking-website-prod-secure.entrypoints=https"
+      - "traefik.http.routers.haking-website-prod-secure.rule=Host(`www.hakingstudio.com`)"
+      - "traefik.http.routers.haking-website-prod-secure.tls=true"
+#      - "traefik.http.routers.haking-website-prod-secure.middlewares=haking-website-prod-auth"
+      - "traefik.http.routers.haking-website-prod-secure.service=haking-website-prod-haking-website-prod"
+      - "traefik.http.routers.haking-website-prod-secure.tls.domains[0].main=hakingstudio.com"
+      - "traefik.http.routers.haking-website-prod-secure.tls.domains[0].sans=*.hakingstudio.com"
+#      - "traefik.http.services.haking-website-prod.loadbalance.server.port=8080"
+      - "traefik.docker.network=proxy"
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true
