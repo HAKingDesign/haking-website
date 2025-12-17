@@ -11,7 +11,7 @@
 <style scoped>
 .filter{
     height: 75px;;
-    filter: invert(100%) contrast(100%);
+    filter: invert(0%) contrast(100%);
 }
 div .content{
     justify-content: center;
@@ -20,6 +20,12 @@ div .content{
     margin-left: 0px;
     padding-top: 25px;
     padding-bottom: 25px;
+}
+@media (prefers-color-scheme: dark) {
+    .filter{
+        height: 75px;;
+        filter: invert(100%) contrast(100%);
+    }
 }
 @media (min-width: 1024px) {
     

@@ -8,8 +8,9 @@
   font-weight: normal;
   z-index: 1;
   
-  background-color: #100913c2;
+  /* background-color: #100913c2; */
   /* background-color: #ffffff88; */
+  background-color:var(--color-background-trans);
   
   clip-path: polygon(
     0 0,
@@ -31,14 +32,14 @@
 a,
 .blue {
   text-decoration: none;
-  color: rgb(0, 189, 189);
+  color: var(--color-accent-text);
   transition: 0.4s;
   padding: 3px;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(198, 100%, 37%, 0.2);
+    background-color: var(--color-accent-highlight);
   }
 }
 

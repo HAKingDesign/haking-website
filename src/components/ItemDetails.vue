@@ -51,8 +51,8 @@ const slots = useSlots()
       position: relative;
       display: flex;
       align-items: center;
-      background: rgba(0, 0, 0, 0.39);
-      color: #ffffffb0;
+      background: var(--color-background-mute-trans);
+      color: var(--color-text);
       height: 4rem;
       padding-left: 1rem;
     }
