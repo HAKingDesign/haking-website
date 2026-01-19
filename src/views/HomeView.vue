@@ -4,7 +4,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 
 <template>
   <main>
-    <div class="content">With 3 years of experience, crafting full-stack tools and applications for diverse teams, 
+    <div class="content">With more than 5 years of experience crafting full-stack tools and applications for diverse teams, 
 I have developed the skills required to meet customers' unique UX/UI and data visualization/aggregation needs. 
 Combine that with my experience with game development and computer graphics makes for engaging and visually appealing experiences.
     </div>
